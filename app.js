@@ -1,10 +1,13 @@
 const cors = require("cors");
 const express = require("express");
-const env = require("./config/env");
+// const env = require("./config/env");
+const dotenv = require("dotenv");
+
+dotenv.config();
 const app = express();
 
 const corsOptions = {
-  origin: env.corsOrigin.split(",").map((item) => item.trim()),
+  origin: process.env.CORS_ORIGIN,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   optionsSuccessStatus: 204,
 };
