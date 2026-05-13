@@ -47,7 +47,7 @@ exports.getUserOptions = async (req, res) => {
 
   const users = await User.findAll({
     where,
-    attributes: ["id", "name", "email", "department", "role"],
+    attributes: ["id", "name", "email", "department", "role", "teamId"],
     order: [["name", "ASC"]],
   });
 
